@@ -21,7 +21,7 @@
     "user-scoping",
     "in-memory"
   ],
-  "author": "",
+  "author": "Abhishek",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

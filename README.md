@@ -2,7 +2,7 @@
 
 > **Backend Developer Intern Technical Interview Assessment**  
 > **Company:** V7 AI Solutions LLP  
-> **Author:** Candidate Submission  
+> **Author:** Abhishek  
 > **Tech Stack:** Node.js, TypeScript, Express, Vitest, Supertest, Docker, OpenAPI / Swagger
 
 ---

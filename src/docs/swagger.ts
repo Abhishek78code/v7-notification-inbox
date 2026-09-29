@@ -9,8 +9,8 @@ export const swaggerDocument = {
     description:
       'REST API service for managing user in-app notifications with user-scoped isolation, pagination, and read-state management. Built for V7 AI Solutions technical evaluation.',
     contact: {
-      name: 'Backend Developer Candidate',
-      email: 'candidate@example.com',
+      name: 'Abhishek',
+      email: 'abhiabhi29283@gmail.com',
     },
   },
   servers: [
