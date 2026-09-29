@@ -19,7 +19,7 @@ export function createApp(): Application {
   // Structured Logging Middleware
   app.use(requestLogger);
 
-  // Global API Rate Limiter (Bonus: 120 req / minute per IP / x-user-id)
+  // Global API Rate Limiter (120 req / minute per IP / x-user-id)
   app.use(createRateLimiter(60 * 1000, 120));
 
   // Interactive OpenAPI / Swagger Documentation

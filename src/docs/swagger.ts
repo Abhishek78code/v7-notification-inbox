@@ -7,7 +7,7 @@ export const swaggerDocument = {
     title: 'Notification Inbox API',
     version: '1.0.0',
     description:
-      'REST API service for managing user in-app notifications with user-scoped isolation, pagination, and read-state management. Built for V7 AI Solutions technical evaluation.',
+      'Production-ready REST API service for managing user in-app notifications with user-scoped data access, pagination, and read-state management.',
     contact: {
       name: 'Abhishek',
       email: 'abhiabhi29283@gmail.com',
@@ -199,7 +199,7 @@ export const swaggerDocument = {
     },
     '/notifications/{id}': {
       get: {
-        summary: 'Get single notification by ID (Bonus)',
+        summary: 'Get single notification by ID',
         description:
           'Fetches notification by ID. Returns 404 if notification belongs to another user (anti-IDOR).',
         parameters: [

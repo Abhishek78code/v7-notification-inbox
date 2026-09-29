@@ -2,15 +2,15 @@ import { NotificationService } from './services/notification.service';
 import { InMemoryNotificationStore } from './store/in-memory.store';
 
 /**
- * Automated Demo Runner for Video Demonstration (Section 11.2)
- * Runs all mandatory assessment scenarios sequentially with clean visual formatting.
+ * Interactive Demo Script
+ * Demonstrates notification inbox capabilities: pagination, filtering, read status, and user isolation.
  */
 async function runDemo() {
   const store = new InMemoryNotificationStore();
   const service = new NotificationService({ store });
 
   console.log('\n===============================================================');
-  console.log('  V7 AI SOLUTIONS - NOTIFICATION INBOX APIs DEMONSTRATION');
+  console.log('         NOTIFICATION INBOX API DEMONSTRATION');
   console.log('===============================================================\n');
 
   // Seed sample records

@@ -281,7 +281,7 @@ describe('NotificationService (Unit Tests)', () => {
     });
   });
 
-  describe('getNotificationById (Bonus)', () => {
+  describe('getNotificationById', () => {
     it('returns notification if owned by current user', async () => {
       const notif = await service.createNotification({
         userId: 'user-alice',

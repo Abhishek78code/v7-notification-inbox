@@ -9,7 +9,7 @@ describe('Notification Inbox API (Integration Tests)', () => {
     await inMemoryStore.clear();
   });
 
-  describe('Authentication & Security Headers (Section 5.1)', () => {
+  describe('Authentication & Security Headers', () => {
     it('returns 401 Unauthorized when x-user-id header is missing', async () => {
       const res = await request(app).get('/notifications');
       expect(res.status).toBe(401);
@@ -26,7 +26,7 @@ describe('Notification Inbox API (Integration Tests)', () => {
     });
   });
 
-  describe('GET /notifications (Listing, Pagination, Filtering, Sorting - Section 5.2)', () => {
+  describe('GET /notifications (Listing, Pagination, Filtering, Sorting)', () => {
     beforeEach(async () => {
       // Seed Alice with 4 notifications
       for (let i = 1; i <= 4; i++) {
@@ -145,7 +145,7 @@ describe('Notification Inbox API (Integration Tests)', () => {
     });
   });
 
-  describe('POST /notifications/:id/read (Mark as Read & Anti-IDOR - Section 5.3)', () => {
+  describe('POST /notifications/:id/read (Mark as Read & Anti-IDOR)', () => {
     it('marks notification as read if it exists and belongs to current user', async () => {
       const notif = await notificationService.createNotification({
         userId: 'user-alice',
@@ -196,7 +196,7 @@ describe('Notification Inbox API (Integration Tests)', () => {
     });
   });
 
-  describe('POST /notifications/read-all (Section 5.4)', () => {
+  describe('POST /notifications/read-all', () => {
     it('marks all current user notifications as read without touching another user count', async () => {
       // Alice has 3 unread
       await notificationService.createNotification({ userId: 'user-alice', kind: 'k', title: 'A1', body: 'B' });
@@ -230,7 +230,7 @@ describe('Notification Inbox API (Integration Tests)', () => {
     });
   });
 
-  describe('Bonus Endpoints & Infrastructure', () => {
+  describe('Additional Endpoints & Service Infrastructure', () => {
     it('GET /notifications/:id returns 200 for owned notification and 404 for other user', async () => {
       const aliceNotif = await notificationService.createNotification({
         userId: 'user-alice',

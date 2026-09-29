@@ -23,7 +23,7 @@ export interface NotificationServiceOptions {
 export class NotificationService {
   private store: InMemoryNotificationStore;
   
-  // Rate limiting tracker for internal createNotification calls (Bonus requirement)
+  // Rate limiting tracker for internal createNotification calls
   private createRateLimits: Map<string, { count: number; windowStart: number }> = new Map();
   private readonly rateLimitMax: number;
   private readonly rateLimitWindowMs: number;
@@ -43,7 +43,7 @@ export class NotificationService {
     // 1. Input Validation
     this.validateCreatePayload(dto);
 
-    // 2. Bonus: Rate Limiting on creation (per userId)
+    // 2. Rate Limiting on creation (per userId)
     this.checkCreateRateLimit(dto.userId);
 
     // 3. Construct Notification Record
@@ -156,7 +156,7 @@ export class NotificationService {
     if (isNaN(limit) || limit < 1) {
       limit = 10; // Default limit
     }
-    // Hard constraint from spec: limit must be capped at 50, even if a higher value is requested
+    // Cap limit at 50 to prevent DoS from excessive page sizes
     if (limit > 50) {
       limit = 50;
     }
@@ -267,8 +267,8 @@ export class NotificationService {
   }
 
   /**
-   * Bonus endpoint: GET /notifications/:id
-   * Returns a 404 for non-existent IDs or IDs belonging to another user.
+   * Retrieve single notification by ID
+   * Enforces tenant isolation: returns 404 for non-existent IDs or IDs belonging to another user.
    */
   public async getNotificationById(userId: string, notificationId: string): Promise<NotificationRecord> {
     if (!userId || typeof userId !== 'string' || userId.trim().length === 0) {

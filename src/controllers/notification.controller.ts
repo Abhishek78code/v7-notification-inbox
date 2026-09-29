@@ -82,7 +82,7 @@ export class NotificationController {
   };
 
   /**
-   * GET /notifications/:id (Bonus)
+   * GET /notifications/:id
    * Get single notification by ID (enforces 404 for other users' notifications)
    */
   public getById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

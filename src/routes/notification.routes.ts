@@ -27,7 +27,7 @@ router.post('/read-all', notificationController.markAllAsRead);
 router.post('/:id/read', notificationController.markAsRead);
 
 /**
- * GET /notifications/:id (Bonus Endpoint)
+ * GET /notifications/:id
  * Retrieve a specific notification by ID (returns 404 for other user's notification)
  */
 router.get('/:id', notificationController.getById);

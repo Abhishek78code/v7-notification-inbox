@@ -11,7 +11,7 @@ declare global {
 }
 
 /**
- * Authentication Middleware (Simplified for Assessment)
+ * Authentication Middleware
  * Reads the `x-user-id` header and attaches it to the request object.
  * Rejects requests with missing or empty `x-user-id` header with 401 Unauthorized.
  */

@@ -1,6 +1,6 @@
 /**
  * Notification Data Model & Type Definitions
- * Specification compliant with Section 5.6 of the assessment
+ * Core domain entities, DTOs, and pagination types
  */
 
 export interface NotificationRecord {
